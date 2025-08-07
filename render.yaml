@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: selenium-practice
+    env: docker
+    buildCommand: docker build -t selenium-practice .
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: PORT
+        value: 8080
