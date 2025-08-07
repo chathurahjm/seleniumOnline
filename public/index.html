@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Practice Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Selenium Practice Platform</h1>
+            <p>Write and run Selenium code directly in your browser!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <h2>Code Editor</h2>
+                <textarea id="code-editor">from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# Example: Navigate to Google and print the title
+driver.get("https://www.google.com")
+print(driver.title)
+
+# Example: Find search box and type something
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("Selenium with Python")
+</textarea>
+            </div>
+
+            <div class="control-section">
+                <button id="run-button" onclick="runCode()">Run Code</button>
+                <button id="clear-button" onclick="clearOutput()">Clear Output</button>
+            </div>
+
+            <div class="output-section">
+                <h2>Output</h2>
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
